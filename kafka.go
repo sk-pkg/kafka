@@ -66,7 +66,7 @@ func WithAutoSubmit(auto bool) Option {
 func WithClientID(CID string) Option {
 	return func(o *option) {
 		hostname, _ := os.Hostname()
-		o.clientID = CID + "_" + hostname
+		o.clientID = CID + "-" + hostname
 	}
 }
 
@@ -120,7 +120,7 @@ func WithLogger(logger *zap.Logger) Option {
 
 func New(opts ...Option) (*Manager, error) {
 	opt := &option{
-		version:                 sarama.V2_2_0_0,
+		version:                 sarama.V3_5_1_0,
 		producerRetryMax:        defaultRetryMax,
 		consumerOffsetsRetryMax: defaultRetryMax,
 		autoSubmit:              defaultAutoSubmit,

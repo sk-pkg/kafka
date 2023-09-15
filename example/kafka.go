@@ -38,7 +38,7 @@ func producer(k *kafka.Manager) {
 		time.Sleep(1 * time.Second)
 		k.Logger.Info("send message", zap.Any("number", i))
 		num := strconv.Itoa(i * 5)
-		k.SendMessage("datacenter-source-data", sarama.StringEncoder("testKey:"+num), sarama.StringEncoder("testValue:"+num))
+		k.SendMessage("kafka-test", sarama.StringEncoder("testKey:"+num), sarama.StringEncoder("testValue:"+num))
 	}
 }
 
