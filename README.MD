@@ -50,7 +50,7 @@ func producer(k *kafka.Manager) {
 		time.Sleep(1 * time.Second)
 		k.Logger.Info("send message", zap.Any("number", i))
 		num := strconv.Itoa(i * 5)
-		k.SendMessage("datacenter-source-data", sarama.StringEncoder("testKey:"+num), sarama.StringEncoder("testValue:"+num))
+		k.SendMessage("kafka-test", sarama.StringEncoder("testKey:"+num), sarama.StringEncoder("testValue:"+num))
 	}
 }
 
@@ -92,9 +92,9 @@ func getLogger() *zap.Logger {
 ```go
 kafka.WithClientID("kafka")
 ```
-2.Version指定使用的kafka版本号，默认为（v2.2.0.0），此项可选
+2.Version指定使用的kafka版本号，默认为（v3.5.1.0），此项可选
 ```go
-kafka.WithVersion(sarama.V2_2_0_0)
+kafka.WithVersion(sarama.V3_5_1_0)
 ```
 3.ProducerBrokers指定Producer连接的brokers，如要生产kafka消息是此项为必填
 ```go
