@@ -3,7 +3,7 @@ package kafka
 import (
 	"context"
 	"errors"
-	"github.com/Shopify/sarama"
+	"github.com/IBM/sarama"
 	"go.uber.org/zap"
 	"os"
 )

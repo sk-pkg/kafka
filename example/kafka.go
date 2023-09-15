@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Shopify/sarama"
+	"github.com/IBM/sarama"
 	"github.com/sk-pkg/kafka"
 	"github.com/sk-pkg/logger"
 	"go.uber.org/zap"
